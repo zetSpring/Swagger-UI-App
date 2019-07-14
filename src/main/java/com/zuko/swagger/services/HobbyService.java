@@ -28,7 +28,7 @@ public class HobbyService {
     }
 
     public Hobby findHobby(Long hobbyId){
-        return hobbyRepository.getOne(hobbyId);
+        return hobbyRepository.findById(hobbyId).get();
     }
 
     public void deleteHobby(Long hobbyId){

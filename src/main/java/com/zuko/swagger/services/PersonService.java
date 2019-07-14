@@ -35,7 +35,7 @@ public class PersonService {
     }
 
     public Person findOne(Long personId){
-        return personRepository.getOne(personId);
+        return personRepository.findById(personId).get();
     }
 
 
