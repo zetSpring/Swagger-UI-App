@@ -4,6 +4,7 @@ import com.zuko.swagger.model.Person;
 import com.zuko.swagger.repositories.HobbyRepository;
 import com.zuko.swagger.repositories.PersonRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -13,7 +14,9 @@ import java.util.List;
 @Service
 public class PersonService {
 
+    @Autowired
     private PersonRepository personRepository;
+    @Autowired
     private HobbyRepository hobbyRepository;
 
     public Person createPerson(Person person){

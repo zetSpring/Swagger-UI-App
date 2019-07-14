@@ -3,6 +3,7 @@ package com.zuko.swagger.controller;
 import com.zuko.swagger.model.Hobby;
 import com.zuko.swagger.services.HobbyService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,16 +13,18 @@ import java.util.List;
 @RequestMapping("/hobbies")
 public class HobbyController {
 
+    @Autowired
     private HobbyService hobbyService;
+
 
     @GetMapping("/")
     public List<Hobby> findAll(){
         return hobbyService.findAllHobbies();
     }
 
-    @GetMapping("/{hobbyId}")
-    public Hobby findHobby(@PathVariable Long id){
-        return hobbyService.findHobby(id);
+    @GetMapping("/find/{hobbyId}")
+    public Hobby findHobby(@PathVariable Long hobbyId){
+        return hobbyService.findHobby(hobbyId);
     }
 
     @PostMapping("/")

@@ -1,5 +1,6 @@
 package com.zuko.swagger.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,5 +21,6 @@ public class Hobby implements Serializable {
     private String hobbyName;
 
     @ManyToOne
+    @JsonIgnore
     private Person person;
 }

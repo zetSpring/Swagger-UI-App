@@ -3,6 +3,7 @@ package com.zuko.swagger.controller;
 import com.zuko.swagger.model.Person;
 import com.zuko.swagger.services.PersonService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/person")
 public class PersonController {
+
+    @Autowired
     private PersonService personService;
 
     @GetMapping("/")
@@ -24,8 +27,8 @@ public class PersonController {
     }
 
     @GetMapping("/{personId")
-    public Person findOne(@PathVariable Long id){
-        return personService.findOne(id);
+    public Person findPerson(@PathVariable Long personId){
+        return personService.findOne(personId);
     }
 
     @GetMapping("/find/{personName}")

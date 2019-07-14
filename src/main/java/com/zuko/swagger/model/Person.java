@@ -25,6 +25,6 @@ public class Person implements Serializable {
     @Column(name = "city")
     private String city;
 
-    @OneToMany(mappedBy = "person", cascade = CascadeType.DETACH)
+    @OneToMany(mappedBy = "person", cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     private List<Hobby> hobbies;
 }
