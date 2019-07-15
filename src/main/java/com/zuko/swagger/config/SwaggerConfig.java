@@ -14,9 +14,20 @@ public class SwaggerConfig {
     @Bean
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("REST API v1")
                 .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.zuko.swagger.controller"))
+                .paths(PathSelectors.ant("/v1/**"))
+                .build();
+    }
+
+    @Bean
+    public Docket apiV2(){
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("REST API v2")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.zuko.swagger.controller"))
+                .paths(PathSelectors.ant("/v2/**"))
                 .build();
     }
 }

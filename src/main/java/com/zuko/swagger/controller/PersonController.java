@@ -12,7 +12,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/v1/person")
 @Api("This is the controller for the Person.")
 public class PersonController {
 
