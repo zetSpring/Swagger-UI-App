@@ -38,7 +38,6 @@ public class PersonService {
         return personRepository.findById(personId).get();
     }
 
-
     public List<Person> findByFirstName(String firstName){
         return personRepository.findByFirstName(firstName);
     }
